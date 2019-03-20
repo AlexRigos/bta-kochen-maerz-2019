@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -9,19 +9,67 @@ body {
   color: #000;
 }
 
+
 ul {
-  padding: 30px;
+  padding: 0;
   list-style-type: none;
 }
 
 nav a {
   color: #000;
   text-decoration: none;
+  transition: color 0.4s ease;
+
+}
+nav a:hover{
+  color: #30d80a;
 }
 
-#lieblingslink {color: green;
-/* das ist wieder ein Kommentar */
+.container {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
 }
-.container {background:blue;
+
+#navigation {
+  display: none;
+}
+
+#navigation.show {
+  display: block;
+}
+
+#burger {
+  border: none;
+  background: none;
+  outline: none;
+}
+#hero{
+  background-image: url(../img/intro.jpg);
+  height:100vh;
+}
+
+@media (min-width: 1024px) {
+  #burger {
+    display: none;
+  }
+  #navigation {
+    display: block;
+  }
+  nav li{
+    float: left;
+
+  }
+.container{
+  width: 90%;
+  margin: auto;
+}
+li{ margin-right:50px;
+margin-top: 1rem;}
+}
 
 }
