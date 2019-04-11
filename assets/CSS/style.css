@@ -3,12 +3,31 @@
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   line-height: 1.4;
   color: #000;
 }
 
+#header {
+  position: fixed;
+  height: 60px;
+  background: white;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 1);
+}
+
+header .container {
+  position: relative;
+  height: 100%;
+}
+
+#logo {
+  height: 40px;
+  width: auto;
+  margin-top: 10px;
+}
 
 ul {
   padding: 0;
@@ -19,9 +38,10 @@ nav a {
   color: #000;
   text-decoration: none;
   transition: color 0.4s ease;
-
+  text-transform: uppercase;
 }
-nav a:hover{
+
+nav a:hover {
   color: #30d80a;
 }
 
@@ -29,18 +49,11 @@ nav a:hover{
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  text-transform: uppercase;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 2rem;
+  flex-wrap: wrap;
 }
 
 #navigation {
   display: none;
-}
-
-#navigation.show {
-  display: block;
 }
 
 #burger {
@@ -48,28 +61,194 @@ nav a:hover{
   background: none;
   outline: none;
 }
-#hero{
-  background-image: url(../img/intro.jpg);
-  height:100vh;
+
+#navigation.show {
+  position: fixed;
+  padding-top: 100px;
+  width: 100%;
+  top: 60px;
+  height: calc(100vh - 60px);
+  left: 0;
+  background: white;
+  display: block;
+  z-index: 99;
+  text-align: center;
+  line-height: 3;
 }
 
-@media (min-width: 1024px) {
+#hero {
+  background-image: url(../img/intro.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.hero-box {
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.button:hover {
+  background: #374A67;
+  color: white;
+}
+
+.hero-box p {
+  font-size: 20px;
+}
+
+.button {
+  display: inline-block;
+  color: #374A67;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: white;
+  padding: 15px;
+  border: 1px solid #374A67;
+  box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 1);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.4s all ease;
+  width: 80%;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+}
+
+.card p a {
+  color: #828282;
+}
+
+.card .button:hover {
+  background: white;
+  color: #374A67;
+}
+
+.card .button {
+  background: #374A67;
+  color: white;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+.card {
+  margin: 20px;
+  margin-bottom: 0;
+  text-align: center;
+  box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 1);
+  border-radius: 4px;
+}
+
+.card p {
+  padding: 15px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+h2 {
+  margin: 20px;
+  margin-bottom: 0;
+  margin-top: 100px;
+}
+
+aside h3 {
+  text-align: center;
+  color: white;
+}
+
+aside h2 {
+  margin: 10px;
+  color: white;
+}
+
+aside {
+  text-align: center;
+  background: #04122B;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  margin-top: 20px;
+}
+
+aside .button {
+  width: auto;
+}
+
+input {
+  display: inline-block;
+  color: black;
+  background: white;
+  padding: 15px;
+  border: 1px solid #374A67;
+  box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 1);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+footer nav {
+  font-size: 20px;
+}
+
+footer .container {
+  flex-direction: column;
+  align-items: center;
+}
+
+#iconnavi ul {
+  display: flex;
+}
+
+#iconnavi a {
+  padding-right: 1opx;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 40px);
+  }
   #burger {
     display: none;
   }
   #navigation {
     display: block;
   }
-  nav li{
+  header nav li {
     float: left;
-
   }
-.container{
-  width: 90%;
-  margin: auto;
-}
-li{ margin-right:50px;
-margin-top: 1rem;}
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  li {
+    margin-right: 50px;
+    margin-top: 1rem;
+  }
 }
 
+@media (min-width: 1024px) {
+  .card {
+    flex: 1 1 calc(33% - 40px);
+  }
+  #fußnavi ul {
+    display: flex;
+  }
+  footer .container {
+    flex-direction: row;
+  }
 }
